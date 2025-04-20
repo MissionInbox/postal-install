@@ -125,7 +125,7 @@ get-latest-postal-version() {
         return 1
     fi
 
-    local response=`curl -s https://api.github.com/repos/postalserver/postal/releases/latest`
+    local response=`curl -s https://api.github.com/repos/missioninbox/postal/releases/latest`
 
     local error=`echo $response | jq -r '.message'`
     if [[ "$error" == *"rate limit exceeded"* ]]; then
