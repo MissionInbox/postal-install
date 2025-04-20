@@ -1,7 +1,7 @@
 version: "3.9"
 services:
   web:
-    image: ghcr.io/postalserver/postal:{{version}}
+    image: ghcr.io/missioninbox/postal:{{version}}
     command: postal web-server
     network_mode: host
     volumes:
@@ -9,7 +9,7 @@ services:
     restart: unless-stopped
 
   smtp:
-    image: ghcr.io/postalserver/postal:{{version}}
+    image: ghcr.io/missioninbox/postal:{{version}}
     command: postal smtp-server
     network_mode: host
     cap_add:
@@ -19,7 +19,7 @@ services:
     restart: unless-stopped
 
   worker:
-    image: ghcr.io/postalserver/postal:{{version}}
+    image: ghcr.io/missioninbox/postal:{{version}}
     command: postal worker
     network_mode: host
     volumes:
@@ -28,7 +28,7 @@ services:
 
   runner:
     profiles: ["tools"]
-    image: ghcr.io/postalserver/postal:{{version}}
+    image: ghcr.io/missioninbox/postal:{{version}}
     command: postal
     network_mode: host
     volumes:
