@@ -13,11 +13,11 @@ There are a number of pre-requisites needed to run Postal. These are detailed [i
 For Postal v2 you can use the following:
 
 ```bash
-curl https://raw.githubusercontent.com/postalserver/install/main/prerequisites/install-ubuntu.v2.sh | bash
+curl https://raw.githubusercontent.com/missioninbox/postal-install/main/prerequisites/install-ubuntu.v2.sh | bash
 ```
 
 For Postal v3 you can use the following:
 
 ```bash
-curl https://raw.githubusercontent.com/postalserver/install/main/prerequisites/install-ubuntu.v3.sh | bash
+curl https://raw.githubusercontent.com/missioninbox/postal-install/main/prerequisites/install-ubuntu.v3.sh | bash
 ```
