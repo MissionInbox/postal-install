@@ -4,6 +4,7 @@ postal:
   web_hostname: app.obmengine.com
   web_protocol: https
   smtp_hostname: app.obmengine.com
+  use_ip_pools: true
 
 main_db:
   host: 172.17.1.85
