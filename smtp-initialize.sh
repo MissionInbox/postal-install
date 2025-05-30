@@ -14,11 +14,11 @@ sudo ln -s /opt/postal/install/bin/postal /usr/bin/postal
 # Bootstraping Postal
 postal bootstrap app.obmengine.com
 cd /opt/postal/config/
-wget https://raw.githubusercontent.com/mrkimoz/postal/refs/heads/main/mi-smtp-postal.yml
+wget https://raw.githubusercontent.com/MissionInbox/postal-install/refs/heads/ha-postal/smtp-postal.yml
 mv /opt/postal/config/postal.yml /opt/postal/config/postal.yml.original
-cp -r mi-smtp-postal.yml postal.yml
+cp -r smtp-postal.yml postal.yml
 mv /opt/postal/install/docker-compose.yml /opt/postal/install/docker-compose.yml.old
 cd /opt/postal/install/
-wget https://raw.githubusercontent.com/mrkimoz/postal/refs/heads/main/mi-smtp-compose.yml
-cp -r mi-smtp-compose.yml docker-compose.yml
+wget https://raw.githubusercontent.com/MissionInbox/postal-install/refs/heads/ha-postal/smtp-compose.yml
+cp -r smtp-compose.yml docker-compose.yml
 postal start
