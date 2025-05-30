@@ -1,7 +1,6 @@
 #!/bin/bash
-# This script will Start Postal as SMTP and Worker Servers Only.
+# This script will install all the prerequisites for Postal on Ubuntu.
 # Created By : Eng. Mohamed Kamal
-# Email      : Mr.peacock2@gmail.com
 # Phone      : +201062008120
 
 # Install Postal Helper
