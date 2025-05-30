@@ -1,0 +1,19 @@
+services:
+  web:
+    image: ghcr.io/missioninbox/postal:3.39.0
+    command: postal web-server
+    network_mode: host
+    volumes:
+      - /opt/postal/config:/config
+    restart: unless-stopped
+    environment:
+      - POSTAL_CONFIG_ROOT=/config
+      - BIND_ADDRESS=0.0.0.0
+
+  runner:
+    profiles: ["tools"]
+    image: ghcr.io/missioninbox/postal:3.39.0
+    command: postal
+    network_mode: host
+    volumes:
+      - /opt/postal/config:/config

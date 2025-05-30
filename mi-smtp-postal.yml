@@ -1,0 +1,60 @@
+version: 2
+
+postal:
+  web_hostname: app.obmengine.com
+  web_protocol: https
+  smtp_hostname: app.obmengine.com
+
+main_db:
+  host: 172.17.1.85
+  username: postal
+  password: posa1passw0d
+  database: postal
+
+message_db:
+  host: 172.17.1.85
+  username: postal
+  password: posa1passw0d
+  prefix: postal
+
+redis:
+  sentinel: true
+  sentinel_service_name: mymaster
+  sentinels:
+    - host: redis1
+      port: 26379
+    - host: redis2
+      port: 26379
+    - host: redis3
+      port: 26379
+
+smtp_server:
+  enabled: false
+
+workers:
+  enabled: false
+
+dns:
+  # Specify the DNS records that you have configured. Refer to the documentation at
+  # https://github.com/atech/postal/wiki/Domains-&-DNS-Configuration for further
+  # information about these.
+  mx_records:
+    - mx.app.obmengine.com
+  spf_include: spf.app.obmengine.com
+  return_path_domain: rp.app.obmengine.com
+  route_domain: routes.app.obmengine.com
+  track_domain: track.app.obmengine.com
+
+smtp:
+  # Specify an SMTP server that can be used to send messages from the Postal management
+  # system to users. You can configure this to use a Postal mail server once the
+  # your installation has been set up.
+  host: 127.0.0.1
+  port: 2525
+  username: # Complete when Postal is running and you can
+  password: # generate the credentials within the interface.
+  from_name: Postal
+  from_address: app.obmengine.com
+  
+rails:
+  secret_key: f6bcde0aa579ae4b3462745ffbcc818f1c09d9172428f4f33fe958302510b731acab57f205e2f4f737e8d33d0ad9d21ef57166034609bc2c42e08a84ff91309d45e27af5f0c149e28eef5e5f8c2870116a85b040055b6bfe9e086dd48f2b2cb3dfc088f896b340a5b3ad3993ba07c7de2e1b38653674d10d237713927bf0c1fe
