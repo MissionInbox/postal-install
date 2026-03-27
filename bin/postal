@@ -251,7 +251,12 @@ case "$1" in
         call-hook "pre-upgrade-db"
         run-docker-compose "run --rm runner postal upgrade"
         call-hook "post-upgrade-db"
-        run-docker-compose "up -d --remove-orphans"
+        if [ -f "worker-replicas" ]; then
+            worker_replicas=$(cat worker-replicas | tr -d " \n")
+            run-docker-compose "up -d --remove-orphans --scale worker=$worker_replicas"
+        else
+            run-docker-compose "up -d --remove-orphans"
+        fi
         call-hook "post-upgrade"
         ;;
 
